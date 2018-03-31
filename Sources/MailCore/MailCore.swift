@@ -8,6 +8,7 @@
 import Foundation
 import Vapor
 import Mailgun
+import SendGrid
 
 
 public protocol MailerService: Service {
@@ -42,6 +43,7 @@ public class Mailer: MailerService {
     public enum Config {
         case none
         case mailgun(key: String, domain: String)
+        case sendGrid(key: String)
     }
     
     let config: Config
@@ -49,12 +51,16 @@ public class Mailer: MailerService {
     
     // MARK: Initialization
     
-    @discardableResult public init(config: Config, registerOn services: inout Services) {
+    @discardableResult public init(config: Config, registerOn services: inout Services) throws {
         self.config = config
         
         switch config {
         case .mailgun(let key, let domain):
             services.register(Mailgun(apiKey: key, domain: domain), as: Mailgun.self)
+        case .sendGrid(key: let key):
+            let config = SendGridConfig(apiKey: key)
+            services.register(config)
+            try services.register(SendGridProvider())
         default:
             break
         }
@@ -69,6 +75,12 @@ public class Mailer: MailerService {
         case .mailgun(_, _):
             let mailgunClient = try req.make(Mailgun.self)
             return try mailgunClient.send(message.asMailgunContent(), on: req).map(to: Mailer.Result.self) { _ in
+                return Mailer.Result.success
+            }
+        case .sendGrid(_):
+            let email = SendGridEmail(from: )
+            let sendGridClient = try req.make(SendGridClient.self)
+            try sendGridClient.send([email], on: req.eventLoop).map(on: Mailer.Result.self) { _ in
                 return Mailer.Result.success
             }
         default:

@@ -1,4 +1,3 @@
-import App
 import Dispatch
 import XCTest
 
