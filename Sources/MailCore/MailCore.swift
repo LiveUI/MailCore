@@ -76,13 +76,19 @@ public class Mailer: MailerService {
             let mailgunClient = try req.make(Mailgun.self)
             return try mailgunClient.send(message.asMailgunContent(), on: req).map(to: Mailer.Result.self) { _ in
                 return Mailer.Result.success
-            }
+                }.catchMap({ error in
+                    return Mailer.Result.failure(error: error)
+                }
+            )
         case .sendGrid(_):
-            let email = SendGridEmail(from: )
+            let email = message.asSendGridContent()
             let sendGridClient = try req.make(SendGridClient.self)
-            try sendGridClient.send([email], on: req.eventLoop).map(on: Mailer.Result.self) { _ in
+            return try sendGridClient.send([email], on: req.eventLoop).map(to: Mailer.Result.self) { _ in
                 return Mailer.Result.success
-            }
+                }.catchMap({ error in
+                    return Mailer.Result.failure(error: error)
+                }
+            )
         default:
             return req.eventLoop.newSucceededFuture(result: Mailer.Result.serviceNotConfigured)
         }
