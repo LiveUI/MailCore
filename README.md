@@ -31,7 +31,13 @@ Just add following line package to your `Package.swift` file.
 Usage is really simple. First register the service in your apps `configure` method:
 
 ```swift
+// Mailgun
 let config = Mailer.Config.mailgun(key: "{mailGunApi}", domain: "{mailGunDomain}")
+
+// or SendGrid
+let config = Mailer.Config.sendGrid(key: "{sendGridApiKey}")
+
+// Register and configure the service
 Mailer(config: config, registerOn: &services)
 ```
 
