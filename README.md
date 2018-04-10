@@ -15,7 +15,7 @@ Mailing wrapper for multiple mailing services like MailGun, SendGrig or SMTP
 ## Features
 
 - [x] MailGun
-- [ ] SendGrid
+- [x] SendGrid
 - [ ] SMTP
 
 ## Install
