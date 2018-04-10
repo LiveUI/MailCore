@@ -1,4 +1,4 @@
-![Vapor 3 test tools](https://github.com/LiveUI/VaporTestTools/raw/master/Other/logo.png)
+![Vapor 3 test tools](https://github.com/LiveUI/MailCore/raw/master/Other/logo.png)
 
 ##
 
