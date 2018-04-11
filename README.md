@@ -33,7 +33,7 @@ Just add following line package to your `Package.swift` file.
 
 Usage is really simple mkey!
 
-## 1) Configure
+## 1/3) Configure
 
 First create your client configuration:
 
@@ -80,7 +80,7 @@ let smtp = SMTP(hostname: String,
 let config = Mailer.Config.smtp(smtp)
 ```
 
-## 2) Register service
+## 2/3) Register service
 
 Register and configure the service in your apps `configure` method.
 
@@ -90,7 +90,7 @@ Mailer(config: config, registerOn: &services)
 
 `Mailer.Config` is an `enum` and you can choose from any integrated services to be used
 
-## 3) Send an email
+## 3/3) Send an email
 
 ```swift
 let mail = Mailer.Message(from: "admin@liveui.io", to: "bobby.ewing@southfork.com", subject: "Oil spill", text: "Oooops I did it again", html: "<p>Oooops I did it again</p>")
