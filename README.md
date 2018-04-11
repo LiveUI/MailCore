@@ -17,6 +17,9 @@ Mailing wrapper for multiple mailing services like MailGun, SendGrig or SMTP
 - [x] MailGun
 - [x] SendGrid
 - [x] SMTP
+- [ ] Attachments
+- [ ] Multiple emails sent at the same time
+- [ ] Multiple recipint, CC & BCC fields
 
 ## Install
 
