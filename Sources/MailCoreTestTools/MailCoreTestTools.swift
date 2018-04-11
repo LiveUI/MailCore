@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 @testable import Service
-import MailCore
+@_exported import MailCore
 import VaporTestTools
 
 

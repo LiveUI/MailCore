@@ -9,15 +9,19 @@ import Foundation
 import Vapor
 import Mailgun
 import SendGrid
+@_exported import SwiftSMTP
 
 
+/// Emailing service
 public protocol MailerService: Service {
     func send(_ message: Mailer.Message, on req: Request) throws -> Future<Mailer.Result>
 }
 
 
+/// Mailer class
 public class Mailer: MailerService {
     
+    /// Basic message
     public struct Message {
         public let from: String
         public let to: String
@@ -25,6 +29,7 @@ public class Mailer: MailerService {
         public let text: String
         public let html: String?
         
+        /// Message init
         public init(from: String, to: String, subject: String, text: String, html: String? = nil) {
             self.from = from
             self.to = to
@@ -34,23 +39,28 @@ public class Mailer: MailerService {
         }
     }
     
+    /// Result returned by the services
     public enum Result {
         case serviceNotConfigured
         case success
         case failure(error: Error)
     }
     
+    /// Service configuration
     public enum Config {
         case none
         case mailgun(key: String, domain: String)
         case sendGrid(key: String)
+        case smtp(SMTP)
     }
     
-    let config: Config
+    /// Current email service configuration
+    var config: Config
     
     
     // MARK: Initialization
     
+    /// Mailer initialization. MailerService get's registered to the services at this point, there is no need to do that manually!
     @discardableResult public init(config: Config, registerOn services: inout Services) throws {
         self.config = config
         
@@ -70,6 +80,7 @@ public class Mailer: MailerService {
     
     // MARK: Public interface
     
+    /// Send a message using a provider defined in `config: Config`
     public func send(_ message: Message, on req: Request) throws -> Future<Mailer.Result> {
         switch config {
         case .mailgun(_, _):
@@ -89,15 +100,19 @@ public class Mailer: MailerService {
                     return Mailer.Result.failure(error: error)
                 }
             )
+        case .smtp(let smtp):
+            let promise = req.eventLoop.newPromise(Mailer.Result.self)
+            smtp.send(message.asSmtpMail()) { error in
+                if let error = error {
+                    promise.succeed(result: Mailer.Result.failure(error: error))
+                } else {
+                    promise.succeed(result: Mailer.Result.success)
+                }
+            }
+            return promise.futureResult
         default:
             return req.eventLoop.newSucceededFuture(result: Mailer.Result.serviceNotConfigured)
         }
-    }
-    
-    // MARK: Templating
-    
-    public func template(name: String, params: Codable) -> String {
-        return ":)"
     }
     
 }

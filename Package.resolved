@@ -2,6 +2,42 @@
   "object": {
     "pins": [
       {
+        "package": "Cryptor",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
+        "state": {
+          "branch": null,
+          "revision": "de20ec9af166d779a08c16f05146f4b9124478d0",
+          "version": "0.8.27"
+        }
+      },
+      {
+        "package": "Socket",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
+        "state": {
+          "branch": null,
+          "revision": "26c8f4e4e3000421a0c97aaf0c7b5e9aa5475222",
+          "version": "0.12.94"
+        }
+      },
+      {
+        "package": "SSLService",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSSLService.git",
+        "state": {
+          "branch": null,
+          "revision": "3a87b64a97fb8e923f52f2a68e31e7bd4fc46b42",
+          "version": "0.12.84"
+        }
+      },
+      {
+        "package": "CommonCrypto",
+        "repositoryURL": "https://github.com/IBM-Swift/CommonCrypto.git",
+        "state": {
+          "branch": null,
+          "revision": "9156d238dbc4c15455b77b45e721b2bb0b995e31",
+          "version": "0.1.5"
+        }
+      },
+      {
         "package": "Console",
         "repositoryURL": "https://github.com/vapor/console.git",
         "state": {
@@ -44,6 +80,15 @@
           "branch": null,
           "revision": "4846ea9abeb04863f82f618ee8cb22650a82ae3c",
           "version": "3.0.0-rc.2.1.1"
+        }
+      },
+      {
+        "package": "LoggerAPI",
+        "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
+        "state": {
+          "branch": null,
+          "revision": "ee0084cbb8bace59b3409cec05bedc5d2e97f8b7",
+          "version": "1.7.2"
         }
       },
       {
@@ -110,6 +155,15 @@
         }
       },
       {
+        "package": "SwiftSMTP",
+        "repositoryURL": "https://github.com/IBM-Swift/Swift-SMTP.git",
+        "state": {
+          "branch": null,
+          "revision": "55679ee5697bc736bccd1b8f05d794718644fe5b",
+          "version": "3.0.0"
+        }
+      },
+      {
         "package": "TemplateKit",
         "repositoryURL": "https://github.com/vapor/template-kit.git",
         "state": {
@@ -141,8 +195,8 @@
         "repositoryURL": "https://github.com/twof/VaporMailgunService.git",
         "state": {
           "branch": null,
-          "revision": "e661e24415f3600755ba62e8e549c126a08aec6e",
-          "version": "0.4.1"
+          "revision": "c04f7053b4279cb5602481c569b4b8f0748cb01a",
+          "version": "0.5.0"
         }
       },
       {
@@ -150,7 +204,7 @@
         "repositoryURL": "https://github.com/LiveUI/VaporTestTools.git",
         "state": {
           "branch": "master",
-          "revision": "dc93505814efdbd9e97ce2844bb534e8adf1436e",
+          "revision": "0791548a30e6a805bf9291b0ad6707c4085cc3ee",
           "version": null
         }
       }
