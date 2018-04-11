@@ -12,7 +12,7 @@
 
 Mailing wrapper for multiple mailing services like MailGun, SendGrig or SMTP
 
-## Features
+# Features
 
 - [x] MailGun
 - [x] SendGrid
@@ -21,7 +21,7 @@ Mailing wrapper for multiple mailing services like MailGun, SendGrig or SMTP
 - [ ] Multiple emails sent at the same time
 - [ ] Multiple recipint, CC & BCC fields
 
-## Install
+# Install
 
 Just add following line package to your `Package.swift` file.
 
@@ -29,9 +29,13 @@ Just add following line package to your `Package.swift` file.
 .package(url: "https://github.com/LiveUI/MailCore.git", .branch("master"))
 ```
 
-## Usage
+# Usage
 
-Usage is really simple. First register the service in your apps `configure` method:
+Usage is really simple mkey!
+
+## 1) Configure
+
+First create your client configuration:
 
 #### Mailgun
 
@@ -57,7 +61,7 @@ let smtp = SMTP(hostname: "smtp.gmail.com",     // SMTP server address
 let config = Mailer.Config.smtp(smtp)
 ```
 
-<b>Using TLS:</b>
+#### SMTP using TLS
 
 All parameters of `SMTP` struct:
 
@@ -76,9 +80,9 @@ let smtp = SMTP(hostname: String,
 let config = Mailer.Config.smtp(smtp)
 ```
 
-#### Register service
+## 2) Register service
 
-Register and configure the service.
+Register and configure the service in your apps `configure` method.
 
 ```swift
 Mailer(config: config, registerOn: &services)
@@ -86,7 +90,7 @@ Mailer(config: config, registerOn: &services)
 
 `Mailer.Config` is an `enum` and you can choose from any integrated services to be used
 
-#### Send an email
+## 3) Send an email
 
 ```swift
 let mail = Mailer.Message(from: "admin@liveui.io", to: "bobby.ewing@southfork.com", subject: "Oil spill", text: "Oooops I did it again", html: "<p>Oooops I did it again</p>")
@@ -96,7 +100,7 @@ return try req.mail.send(mail).flatMap(to: Response.self) { mailResult in
 }
 ```
 
-## Testing
+# Testing
 
 Mailcore provides a  `MailCoreTestTools` framework which you can import into your tests to get `MailerMock`.
 
@@ -143,38 +147,38 @@ public class MailerMock: MailerService {
 }
 ```
 
-## Support
+# Support
 
 Join our [Slack](http://bit.ly/2B0dEyt), channel <b>#help-boost</b> to ... well, get help :) 
 
-## Boost AppStore
+# Boost AppStore
 
 Core package for <b>[Boost](http://www.boostappstore.com)</b>, a completely open source enterprise AppStore written in Swift!
 - Website: http://www.boostappstore.com
 - Github: https://github.com/LiveUI/Boost
 
-## Other core packages
+# Other core packages
 
 * [BoostCore](https://github.com/LiveUI/BoostCore/) - AppStore core module
 * [ApiCore](https://github.com/LiveUI/ApiCore/) - Base user & team management including forgotten passwords, etc ...
 * [DBCore](https://github.com/LiveUI/DbCore/) - Set of tools for work with PostgreSQL database
 * [VaporTestTools](https://github.com/LiveUI/VaporTestTools) - Test tools and helpers for Vapor 3
 
-## Implemented thirdparty providers
+# Implemented thirdparty providers
 
 * <b>MailGun</b> - https://github.com/twof/VaporMailgunService
 * <b>SendGrig</b> - https://github.com/vapor-community/sendgrid-provider
 * <b>SMTP</b> - https://github.com/IBM-Swift/Swift-SMTP
 
-## Code contributions
+# Code contributions
 
 We love PR’s, we can’t get enough of them ... so if you have an interesting improvement, bug-fix or a new feature please don’t hesitate to get in touch. If you are not sure about something before you start the development you can always contact our dev and product team through our Slack.
 
-## Author
+# Author
 
 Ondrej Rafaj (@rafiki270 on [Github](https://github.com/rafiki270), [Twitter](https://twitter.com/rafiki270), [LiveUI Slack](http://bit.ly/2B0dEyt) and [Vapor Slack](https://vapor.team/))
 
-## License
+# License
 
 MIT license, please see LICENSE file for more details.
 
