@@ -13,9 +13,9 @@ import SwiftSMTP
 extension Mailer.Message {
     
     func asSmtpMail() -> Mail {
-        let fromUser = User(email: from)
+        let fromUser = Mail.User(email: from)
         
-        let toUser = User(email: to)
+        let toUser = Mail.User(email: to)
         
         let attachments: [Attachment]
         if let html = html {

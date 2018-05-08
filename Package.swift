@@ -9,9 +9,9 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0-rc.2"),
-        .package(url: "https://github.com/twof/VaporMailgunService.git", from: "0.4.0"),
-        .package(url: "https://github.com/vapor-community/sendgrid-provider.git", from: "3.0.1"),
-        .package(url: "https://github.com/IBM-Swift/Swift-SMTP.git", from: "3.0.0"),
+        .package(url: "https://github.com/twof/VaporMailgunService.git", from: "1.0.0"),
+        .package(url: "https://github.com/vapor-community/sendgrid-provider.git", from: "3.0.3"),
+        .package(url: "https://github.com/IBM-Swift/Swift-SMTP.git", from: "4.0.0"),
         .package(url: "https://github.com/LiveUI/VaporTestTools.git", .branch("master"))
     ],
     targets: [
