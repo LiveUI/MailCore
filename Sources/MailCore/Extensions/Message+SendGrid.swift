@@ -12,6 +12,7 @@ import SendGrid
 
 extension Mailer.Message {
     
+    /// Message as a SendGrid content
     func asSendGridContent() -> SendGridEmail {
         var content = [
             [

@@ -11,13 +11,16 @@ import Vapor
 
 public struct MailProperty {
     
+    /// Request reference
     let request: Request
     
+    /// Send email
     public func send(_ message: Mailer.Message) throws -> EventLoopFuture<Mailer.Result> {
         let mailer = try request.make(MailerService.self)
         return try mailer.send(message, on: request)
     }
     
+    /// Send email
     public func send(from: String, to: String, subject: String, text: String) throws -> EventLoopFuture<Mailer.Result> {
         return try send(Mailer.Message(from: from, to: to, subject: subject, text: text))
     }
@@ -27,6 +30,7 @@ public struct MailProperty {
 
 extension Request {
     
+    /// Mail functionality accessor for request
     public var mail: MailProperty {
         return MailProperty(request: self)
     }

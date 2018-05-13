@@ -12,6 +12,7 @@ import SwiftSMTP
 
 extension Mailer.Message {
     
+    /// Message as an SMTP email
     func asSmtpMail() -> Mail {
         let fromUser = Mail.User(email: from)
         

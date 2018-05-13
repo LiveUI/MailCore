@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vapor/core.git",
         "state": {
           "branch": null,
-          "revision": "efe79e4f59445b661ba7e6511c2a0b80645c2e72",
-          "version": "3.1.6"
+          "revision": "a909eccc41941faac6fb9e511cdb9a5cb30a05de",
+          "version": "3.1.7"
         }
       },
       {
@@ -186,8 +186,8 @@
         "repositoryURL": "https://github.com/vapor/url-encoded-form.git",
         "state": {
           "branch": null,
-          "revision": "8448fa943057c01220f6a940d3b1b8e9fd92a96e",
-          "version": "1.0.2"
+          "revision": "57cf7fb9c1a1014c50bc05123684a9139ad44127",
+          "version": "1.0.3"
         }
       },
       {
@@ -204,8 +204,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "821184be792dfa144a82fe379784e04eb9dad1eb",
-          "version": "3.0.1"
+          "revision": "8c73eebf7c41c7d8bf83ff87f550e0f97d6aadc4",
+          "version": "3.0.2"
         }
       },
       {
@@ -213,8 +213,8 @@
         "repositoryURL": "https://github.com/twof/VaporMailgunService.git",
         "state": {
           "branch": null,
-          "revision": "4d1cf725069cb508d064810cd52937ea9c8ebd3c",
-          "version": "1.0.1"
+          "revision": "11d300be43d189ecc3d782fcde6d638af6a25e6d",
+          "version": "1.1.0"
         }
       },
       {
@@ -231,8 +231,8 @@
         "repositoryURL": "https://github.com/vapor/websocket.git",
         "state": {
           "branch": null,
-          "revision": "23acd21aa37a200faa2f5d5525c974efa6b5676c",
-          "version": "1.0.0"
+          "revision": "141cb4d3814dc8062cb0b2f43e72801b5dfcf272",
+          "version": "1.0.1"
         }
       }
     ]
