@@ -8,11 +8,11 @@ let package = Package(
         .library(name: "MailCoreTestTools", targets: ["MailCoreTestTools"])
     ],
     dependencies: [
-        .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0-rc.2"),
-        .package(url: "https://github.com/twof/VaporMailgunService.git", from: "1.0.0"),
-        .package(url: "https://github.com/rafiki270/sendgrid-provider.git", .branch("master")),
-        .package(url: "https://github.com/IBM-Swift/Swift-SMTP.git", from: "4.0.0"),
-        .package(url: "https://github.com/LiveUI/VaporTestTools.git", .branch("master"))
+        .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
+        .package(url: "https://github.com/twof/VaporMailgunService.git", from: "1.2.0"),
+        .package(url: "https://github.com/vapor-community/sendgrid-provider.git", from: "3.0.5"),
+        .package(url: "https://github.com/IBM-Swift/Swift-SMTP.git", from: "5.1.0"),
+        .package(url: "https://github.com/LiveUI/VaporTestTools.git", from: "0.1.5")
     ],
     targets: [
         .target(name: "MailCore", dependencies: [
