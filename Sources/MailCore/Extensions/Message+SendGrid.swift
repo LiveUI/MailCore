@@ -28,7 +28,13 @@ extension Mailer.Message {
                 ]
             )
         }
-        let message = SendGridEmail(from: EmailAddress(email: from), replyTo: EmailAddress(email: to), subject: subject, content: content)
+
+        let message = SendGridEmail(
+            personalizations: [Personalization(to: [EmailAddress(email: to)])],
+            from: EmailAddress(email: from),
+            subject: subject,
+            content: content)
+
         return message
     }
     
