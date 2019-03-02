@@ -25,14 +25,18 @@ public class Mailer: MailerService {
     public struct Message {
         public let from: String
         public let to: String
+        public let cc: [String]?
+        public let bcc: [String]?
         public let subject: String
         public let text: String
         public let html: String?
         
         /// Message init
-        public init(from: String, to: String, subject: String, text: String, html: String? = nil) {
+        public init(from: String, to: String, cc: [String]? = nil, bcc: [String]? = nil, subject: String, text: String, html: String? = nil) {
             self.from = from
             self.to = to
+            self.cc = cc
+            self.bcc = bcc
             self.subject = subject
             self.text = text
             self.html = html

@@ -17,6 +17,8 @@ extension Mailer.Message {
         let fromUser = Mail.User(email: from)
         
         let toUser = Mail.User(email: to)
+        let ccUsers = (cc ?? []).map({ Mail.User(email: $0) })
+        let bccUsers = (bcc ?? []).map({ Mail.User(email: $0) })
         
         let attachments: [Attachment]
         if let html = html {
@@ -25,7 +27,7 @@ extension Mailer.Message {
             attachments = []
         }
         
-        let mail = Mail(from: fromUser, to: [toUser], subject: subject, text: text, attachments: attachments)
+        let mail = Mail(from: fromUser, to: [toUser], cc: ccUsers, bcc: bccUsers, subject: subject, text: text, attachments: attachments)
         return mail
     }
     

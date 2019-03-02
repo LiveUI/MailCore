@@ -28,6 +28,10 @@ extension Mailer.Message {
                 ]
             )
         }
+        
+        if cc != nil || bcc != nil {
+            print("SendGrid client doesn't yet support CC or BCC")
+        }
 
         let message = SendGridEmail(
             personalizations: [Personalization(to: [EmailAddress(email: to)])],
