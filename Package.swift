@@ -12,6 +12,7 @@ let package = Package(
         .package(url: "https://github.com/twof/VaporMailgunService.git", from: "1.2.0"),
         .package(url: "https://github.com/vapor-community/sendgrid-provider.git", from: "3.0.5"),
         .package(url: "https://github.com/IBM-Swift/Swift-SMTP.git", from: "5.1.0"),
+        .package(url: "https://github.com/IBM-Swift/LoggerAPI.git", .upToNextMinor(from: "1.8.0")),
         .package(url: "https://github.com/LiveUI/VaporTestTools.git", from: "0.1.5")
     ],
     targets: [
