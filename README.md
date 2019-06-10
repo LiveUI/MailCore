@@ -10,11 +10,11 @@
 [![Vapor 3](https://img.shields.io/badge/vapor-3.0-blue.svg?style=flat)](https://vapor.codes)
 
 
-Mailing wrapper for multiple mailing services like MailGun, SendGrig or SMTP
+Mailing wrapper for multiple mailing services like Mailgun, SendGrid or SMTP
 
 # Features
 
-- [x] MailGun
+- [x] Mailgun
 - [x] SendGrid
 - [x] SMTP
 - [ ] Attachments
@@ -40,7 +40,7 @@ First create your client configuration:
 #### Mailgun
 
 ```swift
-let config = Mailer.Config.mailgun(key: "{mailGunApi}", domain: "{mailGunDomain}")
+let config = Mailer.Config.mailgun(key: "{mailgunApi}", domain: "{mailgunDomain}")
 ```
 
 #### SendGrid
@@ -166,7 +166,7 @@ Core package for <b>[Boost](http://www.boostappstore.com)</b>, a completely open
 
 # Implemented thirdparty providers
 
-* <b>MailGun</b> - https://github.com/twof/VaporMailgunService
+* <b>Mailgun</b> - https://github.com/twof/VaporMailgunService
 * <b>SendGrig</b> - https://github.com/vapor-community/sendgrid-provider
 * <b>SMTP</b> - https://github.com/IBM-Swift/Swift-SMTP
 
