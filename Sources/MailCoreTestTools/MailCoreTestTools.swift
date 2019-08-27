@@ -1,15 +1,5 @@
-//
-//  Boost.swift
-//  MailCore
-//
-//  Created by Ondrej Rafaj on 19/3/2018.
-//
-
-import Foundation
 import Vapor
-@testable import Service
 @_exported import MailCore
-import VaporTestTools
 
 
 public class MailerMock: MailerService {

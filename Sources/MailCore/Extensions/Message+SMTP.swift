@@ -1,11 +1,3 @@
-//
-//  Message+SMTP.swift
-//  MailCore
-//
-//  Created by Ondrej Rafaj on 11/04/2018.
-//
-
-import Foundation
 import Vapor
 import SwiftSMTP
 

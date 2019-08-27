@@ -1,11 +1,3 @@
-//
-//  Message+Mailgun.swift
-//  MailCore
-//
-//  Created by Ondrej Rafaj on 19/03/2018.
-//
-
-import Foundation
 import Vapor
 import Mailgun
 
