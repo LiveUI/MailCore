@@ -53,7 +53,7 @@ public class Mailer: MailerService {
     /// Service configuration
     public enum Config {
         case none
-        case mailgun(key: String, domain: String)
+        case mailgun(key: String, domain: String, region: Mailgun.Region)
         case sendGrid(key: String)
         case smtp(SMTP)
     }
@@ -69,8 +69,8 @@ public class Mailer: MailerService {
         self.config = config
         
         switch config {
-        case .mailgun(let key, let domain):
-            services.register(Mailgun(apiKey: key, domain: domain), as: Mailgun.self)
+        case .mailgun(let key, let domain, let region):
+            services.register(Mailgun(apiKey: key, domain: domain, region: region), as: Mailgun.self)
         case .sendGrid(key: let key):
             let config = SendGridConfig(apiKey: key)
             services.register(config)
