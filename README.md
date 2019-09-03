@@ -40,7 +40,7 @@ First create your client configuration:
 #### Mailgun
 
 ```swift
-let config = Mailer.Config.mailgun(key: "{mailgunApi}", domain: "{mailgunDomain}")
+let config = Mailer.Config.mailgun(key: "{mailgunApi}", domain: "{mailgunDomain}", region: "{mailgunRegion}")
 ```
 
 #### SendGrid
