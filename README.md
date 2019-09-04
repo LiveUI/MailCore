@@ -151,18 +151,16 @@ public class MailerMock: MailerService {
 
 Join our [Slack](http://bit.ly/2B0dEyt), channel <b>#help-boost</b> to ... well, get help :) 
 
-# Boost AppStore
+# Enterprise AppStore
 
-Core package for <b>[Boost](http://www.boostappstore.com)</b>, a completely open source enterprise AppStore written in Swift!
-- Website: http://www.boostappstore.com
-- Github: https://github.com/LiveUI/Boost
+Core package for <b>[Einstore](http://www.einstore.io)</b>, a completely open source enterprise AppStore written in Swift!
+- Website: http://www.einstore.io
+- Github: https://github.com/Einstore/Einstore
 
 # Other core packages
 
-* [BoostCore](https://github.com/LiveUI/BoostCore/) - AppStore core module
+* [EinstoreCore](https://github.com/Einstore/EinstoreCore/) - AppStore core module
 * [ApiCore](https://github.com/LiveUI/ApiCore/) - Base user & team management including forgotten passwords, etc ...
-* [DBCore](https://github.com/LiveUI/DbCore/) - Set of tools for work with PostgreSQL database
-* [VaporTestTools](https://github.com/LiveUI/VaporTestTools) - Test tools and helpers for Vapor 3
 
 # Implemented thirdparty providers
 
