@@ -87,7 +87,7 @@ public class Mailer: MailerService {
     /// Send a message using a provider defined in `config: Config`
     public func send(_ message: Message, on req: Request) throws -> Future<Mailer.Result> {
         switch config {
-        case .mailgun(_, _):
+        case .mailgun:
             let mailgunClient = try req.make(Mailgun.self)
             return try mailgunClient.send(message.asMailgunContent(), on: req).map(to: Mailer.Result.self) { _ in
                 return Mailer.Result.success
