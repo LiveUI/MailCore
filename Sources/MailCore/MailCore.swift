@@ -15,6 +15,7 @@ import SendGrid
 /// Emailing service
 public protocol MailerService: Service {
     func send(_ message: Mailer.Message, on req: Request) throws -> Future<Mailer.Result>
+    func send(_ messages: [Mailer.Message], on req: Request) throws -> Future<[Mailer.Result]>
 }
 
 
@@ -91,8 +92,8 @@ public class Mailer: MailerService {
             let mailgunClient = try req.make(Mailgun.self)
             return try mailgunClient.send(message.asMailgunContent(), on: req).map(to: Mailer.Result.self) { _ in
                 return Mailer.Result.success
-                }.catchMap({ error in
-                    return Mailer.Result.failure(error: error)
+            }.catchMap({ error in
+                return Mailer.Result.failure(error: error)
                 }
             )
         case .sendGrid(_):
@@ -100,8 +101,8 @@ public class Mailer: MailerService {
             let sendGridClient = try req.make(SendGridClient.self)
             return try sendGridClient.send([email], on: req.eventLoop).map(to: Mailer.Result.self) { _ in
                 return Mailer.Result.success
-                }.catchMap({ error in
-                    return Mailer.Result.failure(error: error)
+            }.catchMap({ error in
+                return Mailer.Result.failure(error: error)
                 }
             )
         case .smtp(let smtp):
@@ -119,4 +120,30 @@ public class Mailer: MailerService {
         }
     }
     
+    /// Send multiple messages using a provider defined in `config: Config`
+    public func send(_ messages: [Message], on req: Request) throws -> Future<[Mailer.Result]> {
+        switch config {
+        case .mailgun:
+            throw Abort(.notImplemented, reason: "Sending mass email using Mailgun is not currently supported.")
+        case .sendGrid(_):
+            throw Abort(.notImplemented, reason: "Sending mass email using SendGrid is not currently supported.")
+        case .smtp(let smtp):
+            let promise = req.eventLoop.newPromise([Mailer.Result].self)
+            var results: [Mailer.Result] = []
+            for (i, message) in messages.enumerated() {
+                smtp.send(message.asSmtpMail()) { error in
+                    if let error = error {
+                        results.append(.failure(error: error))
+                    } else {
+                        results.append(.success)
+                    }
+                }
+                guard i == messages.endIndex - 1 else { continue }
+                promise.succeed(result: results)
+            }
+            return promise.futureResult
+        default:
+            return req.eventLoop.newSucceededFuture(result: [Mailer.Result.serviceNotConfigured])
+        }
+    }
 }
