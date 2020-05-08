@@ -20,15 +20,12 @@ extension Mailer.Message {
         let ccUsers = (cc ?? []).map({ Mail.User(email: $0) })
         let bccUsers = (bcc ?? []).map({ Mail.User(email: $0) })
         
-        let attachments: [Attachment]
+        var attachments: [Attachment] = self.attachments ?? []
         if let html = html {
-            attachments = [Attachment(htmlContent: html)]
-        } else {
-            attachments = []
+            attachments.append(Attachment(htmlContent: html))
         }
         
         let mail = Mail(from: fromUser, to: [toUser], cc: ccUsers, bcc: bccUsers, subject: subject, text: text, attachments: attachments)
         return mail
     }
-    
 }
