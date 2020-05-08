@@ -21,7 +21,7 @@ public struct MailProperty {
     }
     
     /// Send email
-    public func send(_ messages: [Mailer.Message]) throws -> EventLoopFuture<[Mailer.Result]> {
+    public func send(_ messages: [Mailer.Message]) throws -> EventLoopFuture<[(Mail, Mailer.Result)]> {
         let mailer = try request.make(MailerService.self)
         return try mailer.send(messages, on: request)
     }
