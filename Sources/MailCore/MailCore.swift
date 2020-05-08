@@ -15,7 +15,7 @@ import SendGrid
 /// Emailing service
 public protocol MailerService: Service {
     func send(_ message: Mailer.Message, on req: Request) throws -> Future<Mailer.Result>
-    func send(_ messages: [Mailer.Message], on req: Request) throws -> Future<[Mailer.Result]>
+    func send(_ messages: [Mailer.Message], on req: Request) throws -> Future<[(Mail, Mailer.Result)]>
 }
 
 
@@ -121,29 +121,22 @@ public class Mailer: MailerService {
     }
     
     /// Send multiple messages using a provider defined in `config: Config`
-    public func send(_ messages: [Message], on req: Request) throws -> Future<[Mailer.Result]> {
+    public func send(_ messages: [Message], on req: Request) throws -> Future<[(Mail, Mailer.Result)]> {
         switch config {
         case .mailgun:
             throw Abort(.notImplemented, reason: "Sending mass email using Mailgun is not currently supported.")
         case .sendGrid(_):
             throw Abort(.notImplemented, reason: "Sending mass email using SendGrid is not currently supported.")
         case .smtp(let smtp):
-            let promise = req.eventLoop.newPromise([Mailer.Result].self)
-            var results: [Mailer.Result] = []
-            for (i, message) in messages.enumerated() {
-                smtp.send(message.asSmtpMail()) { error in
-                    if let error = error {
-                        results.append(.failure(error: error))
-                    } else {
-                        results.append(.success)
-                    }
-                }
-                guard i == messages.endIndex - 1 else { continue }
-                promise.succeed(result: results)
+            let promise = req.eventLoop.newPromise([(Mail, Mailer.Result)].self)
+            smtp.send(messages.map { $0.asSmtpMail() }, progress: nil) { mails, errors in
+                let errors = errors.map { ($0.0, Mailer.Result.failure(error: $0.1)) }
+                let successes = mails.map { ($0, Mailer.Result.success) }
+                promise.succeed(result: errors + successes)
             }
             return promise.futureResult
         default:
-            return req.eventLoop.newSucceededFuture(result: [Mailer.Result.serviceNotConfigured])
+            throw Abort(.serviceUnavailable, reason: "Mails could not be sent: you need to configure your mail service.")
         }
     }
 }
