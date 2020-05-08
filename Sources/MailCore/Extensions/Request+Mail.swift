@@ -21,12 +21,16 @@ public struct MailProperty {
     }
     
     /// Send email
+    public func send(_ messages: [Mailer.Message]) throws -> EventLoopFuture<[(Mail, Mailer.Result)]> {
+        let mailer = try request.make(MailerService.self)
+        return try mailer.send(messages, on: request)
+    }
+    
+    /// Send email
     public func send(from: String, to: String, subject: String, text: String) throws -> EventLoopFuture<Mailer.Result> {
         return try send(Mailer.Message(from: from, to: to, subject: subject, text: text))
     }
-    
 }
-
 
 extension Request {
     
@@ -34,5 +38,4 @@ extension Request {
     public var mail: MailProperty {
         return MailProperty(request: self)
     }
-    
 }
