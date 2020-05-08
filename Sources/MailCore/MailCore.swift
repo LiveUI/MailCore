@@ -31,9 +31,10 @@ public class Mailer: MailerService {
         public let subject: String
         public let text: String
         public let html: String?
+        public let attachments: [Attachment]?
         
         /// Message init
-        public init(from: String, to: String, cc: [String]? = nil, bcc: [String]? = nil, subject: String, text: String, html: String? = nil) {
+        public init(from: String, to: String, cc: [String]? = nil, bcc: [String]? = nil, subject: String, text: String, html: String? = nil, attachments: [Attachment]? = nil) {
             self.from = from
             self.to = to
             self.cc = cc
@@ -41,6 +42,7 @@ public class Mailer: MailerService {
             self.subject = subject
             self.text = text
             self.html = html
+            self.attachments = attachments
         }
     }
     
