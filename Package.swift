@@ -9,7 +9,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
-        .package(url: "https://github.com/twof/VaporMailgunService.git", .upToNextMinor(from: "1.6.0")),
+        .package(url: "https://github.com/twof/VaporMailgunService.git", .upToNextMinor(from: "1.8.0")),
         .package(url: "https://github.com/vapor-community/sendgrid-provider.git", from: "3.0.5"),
         .package(url: "https://github.com/IBM-Swift/Swift-SMTP.git", from: "5.1.0"),
         .package(url: "https://github.com/IBM-Swift/LoggerAPI.git", .upToNextMinor(from: "1.8.0")),

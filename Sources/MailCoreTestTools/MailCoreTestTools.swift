@@ -13,10 +13,10 @@ import VaporTestTools
 
 
 public class MailerMock: MailerService {
-    
     public var result: Mailer.Result = .success
     public var receivedMessage: Mailer.Message?
     public var receivedRequest: Request?
+    
     
     // MARK: Initialization
     
@@ -31,6 +31,10 @@ public class MailerMock: MailerService {
         receivedMessage = message
         receivedRequest = req
         return req.eventLoop.newSucceededFuture(result: result)
+    }
+    
+    public func send(_ messages: [Mailer.Message], on req: Request) throws -> EventLoopFuture<[(Mail, Mailer.Result)]> {
+        fatalError("Not implemented")
     }
     
     public func clear() {

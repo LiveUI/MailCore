@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
         "state": {
           "branch": null,
-          "revision": "fe59cc1fcabb390bf9b3b6dd4f8cacc897d91cf6",
-          "version": "1.0.24"
+          "revision": "6e83ae419817e7272f2f80a7a005a26df366dd8e",
+          "version": "1.0.31"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
         "state": {
           "branch": null,
-          "revision": "a40b405bdf32bc853307dd5dee8d00636e394013",
-          "version": "1.0.44"
+          "revision": "49cab699e9f151eeb870ab93d14642425e824c19",
+          "version": "1.0.49"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/BlueSSLService.git",
         "state": {
           "branch": null,
-          "revision": "6910763b0dfa6f95a75217215d8cdce3ee11a6ae",
-          "version": "1.0.44"
+          "revision": "de36b4d078a12fffba982d17f59d2b7ca587bec9",
+          "version": "1.0.49"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/vapor/console.git",
         "state": {
           "branch": null,
-          "revision": "d6cf07af59ae63cd95c4b5f98cf1f25627750fd1",
-          "version": "3.1.0"
+          "revision": "74cfbea629d4aac34a97cead2447a6870af1950b",
+          "version": "3.1.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/core.git",
         "state": {
           "branch": null,
-          "revision": "33e6b1a5fe0cfd06353022fe03a8da7bf7a1fb01",
-          "version": "3.6.0"
+          "revision": "89c6989fd8b1e08acfd198afba1c38971bb814b2",
+          "version": "3.10.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vapor/crypto.git",
         "state": {
           "branch": null,
-          "revision": "45bb12d13cdec80dbd1cc0685ea002e51ab83439",
-          "version": "3.3.2"
+          "revision": "105c2f875588bf40dd24c00cef3644bf8e327770",
+          "version": "3.4.1"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/vapor/http.git",
         "state": {
           "branch": null,
-          "revision": "b57005e0de30ba36372ac41bfce1ac12b2bc3272",
-          "version": "3.1.8"
+          "revision": "0464b715a4b59f54078bcf7a4b424767b03db5a5",
+          "version": "3.4.0"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
         "state": {
           "branch": null,
-          "revision": "d0ccb4158b83f8692531892a9c894bb757593c6f",
-          "version": "1.8.0"
+          "revision": "e29073bb7cecf3673e56bcb16180e8fd0cb091f6",
+          "version": "1.8.1"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/vapor/multipart.git",
         "state": {
           "branch": null,
-          "revision": "bd7736c5f28e48ed8b683dcc9df3dcd346064c2b",
-          "version": "3.0.3"
+          "revision": "fb216c5a8ef07dcd90aec8a4155e86c831acce97",
+          "version": "3.1.3"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/vapor/routing.git",
         "state": {
           "branch": null,
-          "revision": "626190ddd2bd9f967743b60ba6adaf90bbd2651c",
-          "version": "3.0.2"
+          "revision": "d76f339c9716785e5079af9d7075d28ff7da3d92",
+          "version": "3.1.0"
         }
       },
       {
@@ -114,8 +114,8 @@
         "repositoryURL": "https://github.com/vapor/service.git",
         "state": {
           "branch": null,
-          "revision": "4907311d7d7f609365982fa302b8b17ffdeb46da",
-          "version": "1.0.1"
+          "revision": "fa5b5de62bd68bcde9a69933f31319e46c7275fb",
+          "version": "1.0.2"
         }
       },
       {
@@ -123,8 +123,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "87dbd0216c47ea2e7ddb1b545271b716e03b943e",
-          "version": "1.13.1"
+          "revision": "546610d52b19be3e19935e0880bb06b9c03f5cef",
+          "version": "1.14.4"
         }
       },
       {
@@ -159,8 +159,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/Swift-SMTP.git",
         "state": {
           "branch": null,
-          "revision": "496f779a073991609cf3745214e49449d9b5db24",
-          "version": "5.1.0"
+          "revision": "23360cff5fcb92fb37041f5dd1ef16d7b8fe5ff0",
+          "version": "5.1.1"
         }
       },
       {
@@ -168,8 +168,8 @@
         "repositoryURL": "https://github.com/vapor/template-kit.git",
         "state": {
           "branch": null,
-          "revision": "aff2d6fc65bfd04579b0201b31a8d6720239c1cf",
-          "version": "1.1.1"
+          "revision": "4370aa99c01fc19cc8272b67bf7204b2d2063680",
+          "version": "1.5.0"
         }
       },
       {
@@ -177,8 +177,8 @@
         "repositoryURL": "https://github.com/vapor/url-encoded-form.git",
         "state": {
           "branch": null,
-          "revision": "932024f363ee5ff59059cf7d67194a1c271d3d0c",
-          "version": "1.0.5"
+          "revision": "20f68fbe7fac006d4d0617ea4edcba033227359e",
+          "version": "1.1.0"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "c86ada59b31c69f08a6abd4f776537cba48d5df6",
-          "version": "3.3.0"
+          "revision": "642f3d4d1f0eafad651c85524d0d1c698b55399f",
+          "version": "3.3.3"
         }
       },
       {
@@ -204,8 +204,8 @@
         "repositoryURL": "https://github.com/twof/VaporMailgunService.git",
         "state": {
           "branch": null,
-          "revision": "353706a5c73f4aa79494a9bc681113bd5400017f",
-          "version": "1.5.0"
+          "revision": "9c41e744bced6f2f854bd3632333d57d6db46d51",
+          "version": "1.8.1"
         }
       },
       {
@@ -222,8 +222,8 @@
         "repositoryURL": "https://github.com/vapor/websocket.git",
         "state": {
           "branch": null,
-          "revision": "21eb4773e25a8ff96fe347a31fe106900a69fa6a",
-          "version": "1.1.1"
+          "revision": "d85e5b6dce4d04065865f77385fc3324f98178f6",
+          "version": "1.1.2"
         }
       }
     ]
